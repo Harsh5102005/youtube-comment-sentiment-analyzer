@@ -1,0 +1,11 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+      - src/prepare.py
+      - src/text_utils.py
+      - data/raw/youtube-sentiment-90k.csv
+    params:
+      - data
+    outs:
+      - data/processed

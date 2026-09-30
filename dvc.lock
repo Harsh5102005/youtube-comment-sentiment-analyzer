@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: data/raw/youtube-sentiment-90k.csv
+      hash: md5
+      md5: 92f0c5521e95d0c9d98b7220ae9d5712
+      size: 11010251
+    - path: src/prepare.py
+      hash: md5
+      md5: aecc3a4b6353c96a4ac14de7d222c99d
+      size: 1135
+    - path: src/text_utils.py
+      hash: md5
+      md5: 46d8131008166e0217f2421b1f9f320b
+      size: 355
+    params:
+      params.yaml:
+        data:
+          raw_path: data/raw/youtube-sentiment-90k.csv
+          test_size: 0.2
+          val_size: 0.1
+          max_words: 300
+          seed: 42
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 17dd3ad1c8fe583475ecaaddd88943b6.dir
+      size: 19643583
+      nfiles: 3
