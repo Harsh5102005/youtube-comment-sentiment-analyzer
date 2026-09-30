@@ -32,3 +32,11 @@ stages:
           cache: false
     plots:
       - reports/confusion_matrix.png
+  register:
+    cmd: python src/register_model.py
+    deps:
+      - src/register_model.py
+      - reports/metrics.json
+      - models/run_id.txt
+    params:
+      - register

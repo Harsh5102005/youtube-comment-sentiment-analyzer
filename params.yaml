@@ -9,3 +9,6 @@ baseline:
   word_ngram: [1, 2]
   char_ngram: [2, 5]
   C: 2.0
+register:
+  model_name: yt-sentiment
+  min_test_macro_f1: 0.65

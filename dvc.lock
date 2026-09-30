@@ -84,3 +84,23 @@ stages:
       hash: md5
       md5: 586e5a5483e630f18c372ba05ce20ae0
       size: 80
+  register:
+    cmd: python src/register_model.py
+    deps:
+    - path: models/run_id.txt
+      hash: md5
+      md5: b4ce8db405e1644af0154e67d9baaa94
+      size: 32
+    - path: reports/metrics.json
+      hash: md5
+      md5: 586e5a5483e630f18c372ba05ce20ae0
+      size: 80
+    - path: src/register_model.py
+      hash: md5
+      md5: 24fb6a8416b4db90a06ee2c44af03caf
+      size: 1308
+    params:
+      params.yaml:
+        register:
+          model_name: yt-sentiment
+          min_test_macro_f1: 0.65
