@@ -1,3 +1,4 @@
+import os
 import json, joblib, pandas as pd
 import mlflow, matplotlib
 matplotlib.use("Agg")
@@ -21,7 +22,7 @@ ConfusionMatrixDisplay.from_predictions(test["y"], pred, display_labels=["Neg", 
 fig.savefig("reports/confusion_matrix.png", bbox_inches="tight")
 
 # attach the test results to the same MLflow run that trained the model
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
+mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"))
 with mlflow.start_run(run_id=Path("models/run_id.txt").read_text().strip()):
     mlflow.log_metrics(metrics)
     mlflow.log_figure(fig, "confusion_matrix.png")

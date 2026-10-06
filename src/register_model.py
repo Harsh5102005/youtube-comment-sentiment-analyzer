@@ -1,3 +1,4 @@
+import os
 import json, sys, yaml
 from pathlib import Path
 import mlflow
@@ -6,7 +7,7 @@ from mlflow.tracking import MlflowClient
 P = yaml.safe_load(open("params.yaml"))["register"]
 NAME = P["model_name"]
 
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
+mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"))
 client = MlflowClient()
 
 run_id = Path("models/run_id.txt").read_text().strip()

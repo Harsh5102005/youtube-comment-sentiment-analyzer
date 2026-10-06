@@ -39,8 +39,8 @@ stages:
       nfiles: 3
     - path: src/train.py
       hash: md5
-      md5: 814a3df84a54c30bb0aef8f2f28e64ee
-      size: 1618
+      md5: b51d4c226e8117c9492f07bf978212da
+      size: 1662
     params:
       params.yaml:
         baseline:
@@ -58,7 +58,7 @@ stages:
       size: 9778756
     - path: models/run_id.txt
       hash: md5
-      md5: b4ce8db405e1644af0154e67d9baaa94
+      md5: b2afc6a54d5aed068326ee34dcab60fb
       size: 32
   evaluate:
     cmd: python src/evaluate.py
@@ -73,8 +73,8 @@ stages:
       size: 9778756
     - path: src/evaluate.py
       hash: md5
-      md5: 2e8f9da86b1c9fe3fcab5ffde05d9716
-      size: 1073
+      md5: e9a62835e74cc3f030a220f3e8ab6ded
+      size: 1117
     outs:
     - path: reports/confusion_matrix.png
       hash: md5
@@ -89,7 +89,7 @@ stages:
     deps:
     - path: models/run_id.txt
       hash: md5
-      md5: b4ce8db405e1644af0154e67d9baaa94
+      md5: b2afc6a54d5aed068326ee34dcab60fb
       size: 32
     - path: reports/metrics.json
       hash: md5
@@ -97,8 +97,8 @@ stages:
       size: 80
     - path: src/register_model.py
       hash: md5
-      md5: 24fb6a8416b4db90a06ee2c44af03caf
-      size: 1308
+      md5: 74fe890599fec752580d68c79b6bdd68
+      size: 1352
     params:
       params.yaml:
         register:

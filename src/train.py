@@ -1,3 +1,4 @@
+import os
 import joblib, yaml, pandas as pd
 import mlflow, mlflow.sklearn
 from pathlib import Path
@@ -17,7 +18,7 @@ features = FeatureUnion([
 ])
 pipe = Pipeline([("features", features), ("clf", LogisticRegression(max_iter=1000, C=P["C"]))])
 
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
+mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"))
 mlflow.set_experiment("yt-sentiment")
 
 with mlflow.start_run(run_name="baseline-lr-word-char") as run:

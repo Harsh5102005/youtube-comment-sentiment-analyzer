@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+mlflow-skinny
+scikit-learn
+pandas
+emoji
+pydantic
+boto3
+numpy 
+SciPy
