@@ -4,6 +4,5 @@ COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY src/text_utils.py src/text_utils.py
 COPY backend/ backend/
-ENV MLFLOW_TRACKING_URI=""
 EXPOSE 8000
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
