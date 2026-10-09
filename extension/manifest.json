@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "YT Sentiment Analyzer",
+  "version": "1.0",
+  "description": "Analyze the sentiment of comments on the YouTube video you are watching.",
+  "permissions": ["activeTab"],
+  "host_permissions": ["http://localhost:8000/*"],
+  "action": { "default_popup": "popup.html", "default_title": "YT Sentiment" },
+  "content_scripts": [
+    { "matches": ["https://www.youtube.com/watch*"], "js": ["content.js"] }
+  ]
+}

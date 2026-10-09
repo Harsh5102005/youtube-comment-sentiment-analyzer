@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 340px;
+  margin: 0;
+  padding: 14px;
+  color: #1a1a1a;
+}
+h1 { font-size: 16px; margin: 0 0 10px; }
+button {
+  width: 100%;
+  padding: 9px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: #c00;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:disabled { background: #999; cursor: default; }
+#status { font-size: 12.5px; color: #555; margin: 10px 0; }
+#summary { display: flex; gap: 8px; margin-bottom: 10px; }
+.chip { flex: 1; text-align: center; padding: 6px 2px; border-radius: 6px; font-size: 12px; font-weight: bold; }
+.pos { background: #e2f4e5; color: #146c2e; }
+.neg { background: #fde3e3; color: #a11212; }
+.neu { background: #eceff1; color: #455a64; }
+#results { list-style: none; margin: 0; padding: 0; max-height: 260px; overflow-y: auto; }
+#results li { font-size: 12.5px; padding: 6px 4px; border-bottom: 1px solid #eee; }
+.tag { font-weight: bold; }
+.tag.Positive { color: #146c2e; }
+.tag.Negative { color: #a11212; }
+.tag.Neutral { color: #455a64; }
